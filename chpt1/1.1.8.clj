@@ -15,7 +15,7 @@
   (/ (+ (/ x (square guess)) (* 2 guess)) 3))
 
 (defn good-enough? [guess x]
-  (< (/ (abs (- guess (improve guess x))) guess) 0.001))
+  (< (/ (abs (- guess (improve guess x))) guess) 0.00001))
 
 (defn cbrt-iter [guess x]
   ( if (good-enough? guess x)
@@ -24,3 +24,6 @@
 
 (defn cbrt [x]
   (cbrt-iter 1.0 x))
+
+
+(cbrt 8)
