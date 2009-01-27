@@ -6,13 +6,20 @@
   (+ (recursive-f (- n 1)) (* 2 (recursive-f (- n 2))) (* 3 (recursive-f (- n 3))))))
 
 
-;;(recur-f 10)
-;;(+ (recur-f 9) (* 2 (recur-f 8)) (* 3 (recur-f 7)))
-;;(+ ((recur-f 8) (* 2 (recur-f 7)) (* 3 (recur-f 6)))) ...
-
-
 
 (defn iter-f [n]
-  ;;todo: All
-  )
+  (if (< n 3)
+    n
+    (f-iter n 3 2 1 0)))
+
+(defn f-iter [n i fn-1 fn-2 fn-3]
+  (let [fn (+ fn-1 (* 2 fn-2) (* 3 fn-3))]
+    (if (= n i)
+      fn
+      (f-iter n (+ i 1) fn fn-1 fn-2))))
+
+
+
+
+
   
