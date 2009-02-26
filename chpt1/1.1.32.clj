@@ -4,8 +4,8 @@
 (defn accumulate [combiner base-val term a next b]
   (if (or (> a b) (= a b))
     base-val
-    (combiner (term a) (accumulate combiner base-val term (next a) next b))))
-
+    (combiner (term a) (accumulate combiner base-val term
+                                   
 
 
 (defn iter-accum [combiner base-val term a next b]
