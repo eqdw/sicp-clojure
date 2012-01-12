@@ -24,18 +24,24 @@
 
 ;;Question 2.9
 
-;;say we have two intervals, N = (a b) and M = (c d)
+;; say we have two intervals, N = (a b) and M = (c d)
 ;;
-;;Width of N is (/ 2 (- b a))
-;;Width of M is (/ 2 (- d c))
+;; Width of N is (b - a) / 2 
+;; Width of M is (d - c) / 2
 ;;
-;;If added together, we get ( (+ a b) (+ c d))
-;;Width of N + M is (/ 2 (- (+ c d) (+ a b)))
-;;Is ((c + d) - (a + b)) / 2
-;;Is ( (c + d)/2 +  (-a - b)/2
+;; adding the intervals gives us (l u) where l = (a+c) and u=(b+d)
+;; Width of N + M is (u-l) / 2
+;; ( (b+d) - (a+c) ) / 2
+;; ( b + d - a - c) / 2
+;; ( (b-a) + (d-c)) / 2
+;; (b-a)/2 + (d-c) / 2
 ;;
-;;Dammit I'm not a math student. I'm not doing a friggin proof. It's obvious
-;;to anyone who's taken any stats or done any error calculations EVEr
+;; = width(N) + width(M)
+;; 
+;;
+
+;; the proof for multiplication left as an exercise 
+
 
 ;;Question 2.10
 
@@ -133,21 +139,11 @@
                       (add-interval (div-interval one r1)
                                     (div-interval one r2)))))
 
-;;The wording of this question implies that the problem is floating-point error
+;;
 
 
 ;;Question 2.15
 
-;;This question implies again that I was correct in my answer of question 2.14.
-;;Computer science is an EXACT science (like math!) So I don't care
-
-
 
 ;;Question 2.16
 
-;;Yes I can, but it has one shortcoming: We're restricting to the set of RATIONAL
-;;numbers, not REAL numbers. By representing numbers as an *exact* value (in rational
-;;N/D form), we will NOT introduce floating-point error. However, there are two
-;;cons to this method. One: this prevents us from using irrational numbers, such as
-;;pi (making doing circular geometry impossible); two: this requires exact measurement
-;;of error, which is impossible in real-world scenarios
